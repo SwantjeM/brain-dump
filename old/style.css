@@ -1,0 +1,81 @@
+/* Set the font for the entire body */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Set the background color for the body */
+body {
+    background-color: #53c0d1fe;
+    /* Use your preferred color code or name */
+}
+
+/* Set the font for heading elements (h1, h2, h3, etc.) */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Arial', sans-serif;
+}
+
+/* Set the background color for headings */
+h1,
+h2,
+h3 {
+    background-color: #0f52aa;
+    /* Dark gray background for headings */
+    color: #fff;
+    /* White text color for headings */
+}
+
+/* Set the font for paragraphs */
+p {
+    font-family: Georgia, serif;
+}
+
+/* Set the background color for specific elements with class "highlight" */
+.highlight {
+    background-color: yellow;
+}
+
+/* Set the font for links */
+a {
+    font-family: Verdana, sans-serif;
+}
+
+/* Set the background color for links when hovered */
+a:hover {
+    background-color: #007bff;
+    /* Blue background when hovered */
+    color: #fff;
+    /* White text color when hovered */
+}
+
+#presentWrapper {
+    border-radius: 20px;
+    /* Set the border radius for rounded corners */
+    margin: 0 auto;
+    /* Center the box horizontally */
+    margin-top: 100px;
+    /* Center the box vertically (adjust as needed) */
+    width: 80%;
+}
+
+#formWrapper {
+    border-radius: 20px;
+    /* Set the border radius for rounded corners */
+    margin: 0 auto;
+    /* Center the box horizontally */
+    margin-top: 100px;
+    /* Center the box vertically (adjust as needed) */
+    width: 80%;
+}
+
+input {
+    background-color: rgb(189, 225, 255);
+}
+
+li::before {
+    content: "🎁 ";
+}
