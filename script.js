@@ -80,6 +80,9 @@ document.addEventListener("DOMContentLoaded", function () {
 var countdownTime = 15; // 3 minutes * 60 seconds
 var timerElement = document.getElementById('timer');
 var startButton = document.getElementById('startButton');
+var modal = document.getElementById('myModal');
+var confirmButton = document.getElementById('confirmButton');
+var cancelButton = document.getElementById('cancelButton');
 
 function updateTimer() {
     var minutes = Math.floor(countdownTime / 60);
@@ -92,7 +95,12 @@ function updateTimer() {
     timerElement.textContent = minutes + ':' + seconds;
 }
 
-// countdown to relax
+function startCountdown() {
+    countdown();
+    startButton.style.display = 'none'; // Hide the button after starting the timer
+    modal.style.display = 'none'; // Hide the modal after starting the timer
+}
+
 function countdown() {
     updateTimer();
 
@@ -105,18 +113,17 @@ function countdown() {
     }
 }
 
-function startCountdown() {
-    countdown();
-    startButton.style.display = 'none'; // Hide the button after starting the timer
-}
+// Show the modal when the page loads
+modal.style.display = 'block';
 
-// Show a confirmation pop-up when the page loads
-var confirmation = window.confirm('Welcome to the Brain Dump! you have 3 minutes to empty out your brain. Let\'s go!');
-
-// If the user clicks "OK" in the confirmation pop-up, start the timer
-if (confirmation) {
+// If the user clicks "OK" in the modal, start the timer
+confirmButton.onclick = function() {
     startCountdown();
-} else {
-    // You can handle the case where the user clicks "Cancel" if needed
-    // For example, you might want to provide another way to start the timer
-}
+};
+
+// If the user clicks "Cancel" in the modal, you can handle this case as needed
+cancelButton.onclick = function() {
+    // Handle the cancellation, for example, provide another way to start the timer
+    alert('Timer not started');
+    modal.style.display = 'none';
+};
