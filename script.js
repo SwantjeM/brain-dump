@@ -35,32 +35,29 @@ saveButton.addEventListener("click", function () {
 
         entries.push(newEntry);
 
-        // Optionally, provide user feedback
-        // alert("Text saved temporarily!");
-
         // Clear the input field
         textInput.value = "";
     }
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    var myList = document.getElementById("listpresents");
+// document.addEventListener("DOMContentLoaded", function () {
+//     var myList = document.getElementById("listpresents");
 
-    // Get the current date
-    var currentDate = new Date();
+//     // Get the current date
+//     var currentDate = new Date();
 
-    // Loop through 
-    entries.forEach(function (item) {
-        var entryTimestamp = new Date(item.timestamp);
+//     // Loop through 
+//     entries.forEach(function (item) {
+//     // var entryTimestamp = new Date(item.timestamp);
 
-        // Check if the entry's timestamp is from today
-        if (entryTimestamp.getDate() === currentDate.getDate()) {
-            var li = document.createElement("li");
-            li.textContent = item.name //+ ': ' + item.timestamp;
-            myList.appendChild(li);
-        }
-    });
-});
+//         // Check if the entry's timestamp is from today
+//         //if (entryTimestamp.getDate() === currentDate.getDate()) {
+//             var li = document.createElement("li");
+//             li.textContent = item.name 
+//             myList.appendChild(li);
+//     // }
+//     });
+// });
 
 // Display the entries when the timer runs out and user confirms
 function displayEntries() {
@@ -76,7 +73,6 @@ function displayEntries() {
 // When the timer runs out...
 function timerRunOut() {
     timerElement.textContent = '00:00';
-   // alert('Time is up!');
 
     // Display a confirmation modal with a countdown timer
     confirmationModal.style.display = 'block';
@@ -177,6 +173,6 @@ confirmationConfirmButton.onclick = function() {
 
 // If the user clicks "Cancel" in the second modal, you can handle this case as needed
 confirmationCancelButton.onclick = function() {
-    alert('Timer not started');
-    confirmationModal.style.display = 'none';
+    alert('Feel free to relax some more!');
+   // confirmationModal.style.display = 'none';
 };
