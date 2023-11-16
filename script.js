@@ -4,6 +4,7 @@ const textInput = document.getElementById("textInput");
 const saveButton = document.getElementById("saveButton");
 const formWrapper = document.getElementById("formWrapper");
 const presentWrapper = document.getElementById("presentWrapper")
+const main = document.getElementById("main")
 
 var countdownTime = 15; // 3 minutes * 60 seconds
 var timerElement = document.getElementById('timer');
@@ -17,8 +18,10 @@ var confirmationTime = 5; // 1 minute countdown for confirmation
 var confirmationTimerElement = document.getElementById('confirmationTimer');
 var confirmationConfirmButton = document.getElementById('confirmationConfirmButton');
 var confirmationModal = document.getElementById('confirmationModal');
+var readyForEntries = document.getElementById("readyForEntries")
 
 presentWrapper.style.display = 'none'
+readyForEntries.style.display = "none"
 let entries = [];
 
 // Add an event listener to the Save button
@@ -98,6 +101,9 @@ function startConfirmationTimer() {
         setTimeout(startConfirmationTimer, 1000); // Update every second
     } else {
         // Enable the "OK" button after the timer runs out
+        readyForEntries.style.display = "inline"
+        // confirmationConfirmButton.style.display = "inline"
+        // confirmationCancelButton.style.display = "inline"
         confirmationConfirmButton.removeAttribute('disabled');
     }
 }
@@ -107,6 +113,8 @@ function timerRunOut() {
     timerElement.textContent = '00:00';
     // Display a confirmation modal with a countdown timer
     confirmationModal.style.display = 'block';
+    confirmationConfirmButton.style.display = "none"
+    confirmationCancelButton.style.display = "none"
     startConfirmationTimer(); // Start the confirmation timer
 }
 

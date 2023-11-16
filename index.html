@@ -9,6 +9,9 @@
     <meta name="keywords" content="keywords, for, your, page">
     <link rel="stylesheet" type="text/css" href="style.css">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/addons/p5.sound.min.js"></script>
+
 </head>
 
 <body>
@@ -33,10 +36,13 @@
     <!-- Second Modal: Do you want to see your entries? -->
     <div id="confirmationModal" class="modal">
         <div class="modal-content">
-            <p>Are you ready to see your entries?</p>
-            <div id="confirmationTimer">01:00</div>
-            <button id="confirmationConfirmButton" disabled>Yes</button>
-            <button id="confirmationCancelButton">No</button>
+            <div id="p5-container"></div>
+            <div id="readyForEntries">
+                <p>Are you ready to see your entries?</p>
+                <!-- <div id="confirmationTimer">01:00</div> -->
+                <button id="confirmationConfirmButton" disabled>Yes</button>
+                <button id="confirmationCancelButton">Not yet</button>
+            </div>
         </div>
     </div>
 
@@ -56,7 +62,7 @@
    
 </body>
 
-
+<script src="sketch.js"></script>
 <script src="script.js"></script>
 
 </html>
