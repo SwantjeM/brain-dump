@@ -6,8 +6,8 @@ body, h1, h2, p {
 
 /* Set garden-themed background image with an overlay */
 body {
-  background-color: beige;
-  background: url("images/leaves_background.webp") repeat center center fixed;
+  background-color: rgb(252, 240, 203);
+  background: url("sakura.webp") repeat center center fixed;
   background-size: contain;
   font-family: Verdana, sans-serif; /* Default font stack with fallbacks */
   display: flex;
@@ -18,30 +18,12 @@ body {
   text-align: center;
 }
 
-/* Header styles */
-header {
-  /* background-color: #358541eb; /* Dark green header background */
-  background: linear-gradient(to left, #4b9728, #95c857);
-  color: #fff; /* White text color */
-  padding: 10px;
-  text-align: center;
-  width: 80%; /* 80% width */
-  position: fixed; /* Make the header sticky */
-  top: 0; /* Stick to the top of the viewport */
-  z-index: 100; /* Ensure the header appears on top of other content */
-}
-header h1{
-  font-family: 'Roboto', sans-serif; /* Modern font */
-  font-size: 36px;
-  margin: 10px 0;
-  color: #fff;
-}
 
 h1, h2, h3 {
-  font-family: 'Roboto', sans-serif; /* Modern font */
+  font-family: 'Verdana', sans-serif; /* Modern font */
  /* font-size: 36px; */
   margin: 10px 0;
-  color: #174d00;
+  color: rgb(179, 66, 132)
 } 
 
 
@@ -62,36 +44,6 @@ main p {
   margin-bottom: 10px; /* Adjust the margin size as needed */
 }
 
-/* Footer styles */
-footer {
-  background: linear-gradient(to left, #4b9728, #95c857);
-  color: #fff; /* White text color */
-  padding: 10px;
-  text-align: center;
-  width: 80%; /* 80% width */
-  position: fixed; /* Stick to the bottom */
-  bottom: 0;
-  z-index: 100; /* Ensure the footer appears on top of other content */
-}
-
-/* Apply a subtle shadow to the header and footer */
-header, footer, main {
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
-}
-
-/* Set the font for links */
-a {
-  font-family: 'Verdana', sans-serif;
-  color: #299a03
-}
-
-/* Set the background color for links when hovered */
-a:hover {
-  background-color: #039e08;
-  /* Blue background when hovered */
-  color: #fff;
-  /* White text color when hovered */
-}
 
 #HeadingWrapper {
   border-radius: 10px;
@@ -104,44 +56,26 @@ a:hover {
   background-color:  #358541a1; */
 }
 
-#PlantListWrapper {
-  border-radius: 20px;
-  /* Set the border radius for rounded corners */
-  margin: 0 auto;
-  /* Center the box horizontally */
-  margin-top: 50px;
-  margin-bottom: 10px;
-  /* Center the box vertically (adjust as needed) */
- /*  width: 80%; */
-}
 
-#NotesWrapper {
-  border-radius: 20px;
-  /* Set the border radius for rounded corners */
-  background: rgb(250, 255, 215);
-  margin: 0 auto;
-  /* Center the box horizontally */
-  margin-top: 50px;
-  margin-bottom: 10px;
-  padding: 10px;
-  padding-top: 5px;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
-  /* Center the box vertically (adjust as needed) */
- /*  width: 80%; */
-}
 
-#BottomNavigation {
-  border-radius: 20px;
-  /* Set the border radius for rounded corners */
-  margin: 0 auto;
-  /* Center the box horizontally */
-  margin-top: 100px;
-
-}
+  #NotesWrapper {
+    border-radius: 20px;
+    /* Set the border radius for rounded corners */
+    background: rgb(250, 255, 215);
+    margin: 0 auto;
+    /* Center the box horizontally */
+    margin-top: 50px;
+    margin-bottom: 10px;
+    padding: 10px;
+    padding-top: 5px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+    /* Center the box vertically (adjust as needed) */
+  /*  width: 80%; */
+  }
 
 #timer {
   font-size: 2em;
-  color: #333;
+  color: #5f5f5f;
 }
 
 #startButton {
@@ -176,7 +110,7 @@ a:hover {
   text-align: center;
 }
 
-#confirmButton, #cancelButton, #confirmationConfirmButton, #confirmationCancelButton, #saveButton {
+#confirmButton, #cancelButton, #confirmationConfirmButton, #confirmationCancelButton, #saveButton, #startButton {
   margin: 10px;
   padding: 8px 16px;
   font-size: 16px;
@@ -187,7 +121,9 @@ a:hover {
 }
 
 input {
-  background-color: rgb(250, 252, 210);
-  border: 1px solid rgb(44, 125, 6);
+  background-color: rgb(253, 255, 199);
+  border: 1px solid rgb(239, 180, 16);
   font-size: 16px;
+  width: 100%;
+  height: 200%
 }

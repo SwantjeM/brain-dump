@@ -2,6 +2,8 @@
 const textForm = document.getElementById("textForm");
 const textInput = document.getElementById("textInput");
 const saveButton = document.getElementById("saveButton");
+const formWrapper = document.getElementById("formWrapper");
+const presentWrapper = document.getElementById("presentWrapper")
 
 var countdownTime = 15; // 3 minutes * 60 seconds
 var timerElement = document.getElementById('timer');
@@ -10,102 +12,43 @@ var modal = document.getElementById('startModal');
 var confirmButton = document.getElementById('confirmButton');
 var cancelButton = document.getElementById('cancelButton');
 
-// Additional code for countdown timer in the second modal
+// Additional vars for countdown timer in the second modal
 var confirmationTime = 5; // 1 minute countdown for confirmation
 var confirmationTimerElement = document.getElementById('confirmationTimer');
 var confirmationConfirmButton = document.getElementById('confirmationConfirmButton');
 var confirmationModal = document.getElementById('confirmationModal');
 
-
-var currentDate = new Date();
-
+presentWrapper.style.display = 'none'
 let entries = [];
 
 // Add an event listener to the Save button
 saveButton.addEventListener("click", function () {
-    // Get the text input value
     const inputText = textInput.value;
 
     // Check if the input is not empty
     if (inputText.trim() !== "") {
         newEntry = {
             "name": inputText,
-            "timestamp": currentDate,
         }
-
         entries.push(newEntry);
-
-        // Clear the input field
-        textInput.value = "";
+        textInput.value = "";  // Clear the input field
     }
 });
 
-// document.addEventListener("DOMContentLoaded", function () {
-//     var myList = document.getElementById("listpresents");
+// First modal configuration:
+modal.style.display = 'block';  // Show the modal when the page loads
 
-//     // Get the current date
-//     var currentDate = new Date();
-
-//     // Loop through 
-//     entries.forEach(function (item) {
-//     // var entryTimestamp = new Date(item.timestamp);
-
-//         // Check if the entry's timestamp is from today
-//         //if (entryTimestamp.getDate() === currentDate.getDate()) {
-//             var li = document.createElement("li");
-//             li.textContent = item.name 
-//             myList.appendChild(li);
-//     // }
-//     });
-// });
-
-// Display the entries when the timer runs out and user confirms
-function displayEntries() {
-    var myList = document.getElementById("listpresents");
-
-    entries.forEach(function (item) {
-        var li = document.createElement("li");
-        li.textContent = item.name;
-        myList.appendChild(li);
-    });
-}
-
-// When the timer runs out...
-function timerRunOut() {
-    timerElement.textContent = '00:00';
-
-    // Display a confirmation modal with a countdown timer
-    confirmationModal.style.display = 'block';
-    startConfirmationTimer(); // Start the confirmation timer
-}
-
-// If the user clicks "OK" in the modal, start the timer
+// first modal to start timer, incl. cancel button: 
 confirmButton.onclick = function () {
     startCountdown();
 };
-
-// If the user clicks "Cancel" in the modal, you can handle this case as needed
 cancelButton.onclick = function () {
     alert('Timer not started');
     modal.style.display = 'none';
 };
+startButton.onclick = function () {startCountdown()};
 
-// Show the modal when the page loads
-modal.style.display = 'block';
-
-
-
-function updateTimer() {
-    var minutes = Math.floor(countdownTime / 60);
-    var seconds = countdownTime % 60;
-
-    // Add leading zeros if needed
-    minutes = minutes < 10 ? '0' + minutes : minutes;
-    seconds = seconds < 10 ? '0' + seconds : seconds;
-
-    timerElement.textContent = minutes + ':' + seconds;
-}
-
+// countdown
 function startCountdown() {
     countdown();
     startButton.style.display = 'none'; // Hide the button after starting the timer
@@ -124,22 +67,17 @@ function countdown() {
     }
 }
 
-// Show the modal when the page loads
-modal.style.display = 'block';
 
-// If the user clicks "OK" in the modal, start the timer
-confirmButton.onclick = function() {
-    startCountdown();
-};
+function updateTimer() {
+    var minutes = Math.floor(countdownTime / 60);
+    var seconds = countdownTime % 60;
 
-// If the user clicks "Cancel" in the modal, you can handle this case as needed
-cancelButton.onclick = function() {
-    // Handle the cancellation, for example, provide another way to start the timer
-    alert('Timer not started');
-    modal.style.display = 'none';
-};
+    // Add leading zeros if needed
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    seconds = seconds < 10 ? '0' + seconds : seconds;
 
-
+    timerElement.textContent = minutes + ':' + seconds;
+}
 
 function updateConfirmationTimer() {
     var minutes = Math.floor(confirmationTime / 60);
@@ -164,15 +102,35 @@ function startConfirmationTimer() {
     }
 }
 
+// When the timer runs out...
+function timerRunOut() {
+    timerElement.textContent = '00:00';
+    // Display a confirmation modal with a countdown timer
+    confirmationModal.style.display = 'block';
+    startConfirmationTimer(); // Start the confirmation timer
+}
 
+
+
+// second modal:
 // If the user clicks "OK" in the second modal, show the entries
 confirmationConfirmButton.onclick = function() {
     displayEntries();
+    presentWrapper.style.display = 'block'
+    formWrapper.style.display = 'none'
+    timerElement.style.display = 'none'
     confirmationModal.style.display = 'none'; // Hide the second modal after showing entries
 };
-
-// If the user clicks "Cancel" in the second modal, you can handle this case as needed
 confirmationCancelButton.onclick = function() {
     alert('Feel free to relax some more!');
-   // confirmationModal.style.display = 'none';
 };
+
+// Display the entries when the timer runs out and user confirms
+function displayEntries() {
+    var myList = document.getElementById("listpresents");
+    entries.forEach(function (item) {
+        var li = document.createElement("li");
+        li.textContent = item.name;
+        myList.appendChild(li);
+    });
+}
