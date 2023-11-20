@@ -7,7 +7,7 @@ const presentWrapper = document.getElementById("presentWrapper")
 const main = document.getElementById("main")
 
 
-var countdownTime = 15; // 3 minutes * 60 seconds
+var countdownTime = 180; // 3 minutes * 60 seconds
 var timerElement = document.getElementById('timer');
 var startButton = document.getElementById('startButton');
 var modal = document.getElementById('startModal');
@@ -113,7 +113,7 @@ function timerRunOut() {
     // Display a confirmation modal with a countdown timer
 
     confirmationModal.style.display = 'block';
-    var confirmationTime = 5; // 1 minute countdown for confirmation
+    var confirmationTime = 30; // 1 minute countdown for confirmation
     var confirmationConfirmButton = document.getElementById('confirmationConfirmButton');
     var readyForEntries = document.getElementById("readyForEntries")
     // readyForEntries.style.display = "none"
