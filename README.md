@@ -5,6 +5,6 @@ This app uses non-persistent browser storage, so a page refresh will remove the 
 This project uses mostly plain HTML/javaScript/CSS. The box breathing animation was built in p5.js
 
 If you want to clean out your brain, you can use it here: 
-swantjem.github.io/brain-dump/
+[Brain-dump](swantjem.github.io/brain-dump/)
 
 
