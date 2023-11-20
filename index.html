@@ -9,37 +9,20 @@
     <meta name="keywords" content="keywords, for, your, page">
     <link rel="stylesheet" type="text/css" href="style.css">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/addons/p5.sound.min.js"></script>
+
 </head>
 
 <body>
+   <main id="inputPage"> 
+
+    <button id="startButton">Start Timer</button>
     <div id="presentWrapper">
         <h1>Brain dump</h1>
         <ul id="listpresents"></ul>
         </ul>
     </div>
-
-    <!-- Modal -->
-    <div id="startModal" class="modal">
-        <div class="modal-content">
-            <h2> Welcome to the Brain Dump!</h2>
-            <p>You have 3 minutes to empty out your brain, then it's time to relax for a minute.</p>
-            <p> Enter individual entries you want to dump, then hit 'Save' in between.</p>
-            <p>Do you want to start the timer?</p>
-            <button id="confirmButton">Yes</button>
-            <button id="cancelButton">Not yet</button>
-        </div>
-    </div>
-
-    <!-- Second Modal: Do you want to see your entries? -->
-    <div id="confirmationModal" class="modal">
-        <div class="modal-content">
-            <p>Are you ready to see your entries?</p>
-            <div id="confirmationTimer">01:00</div>
-            <button id="confirmationConfirmButton" disabled>Yes</button>
-            <button id="confirmationCancelButton">No</button>
-        </div>
-    </div>
-
 
     <div id="formWrapper">
         <h2>What things are stressing you out?</h2>
@@ -49,14 +32,40 @@
             <p><button type="button" id="saveButton">Save</button></p>
         </form>
     </div>
-
+</main>
+    
     <div id="timer">03:00</div>
-    <button id="startButton">Start Timer</button>
+    
 
-   
+
+        <!-- Modal -->
+        <div id="startModal" class="modal">
+            <div class="modal-content">
+                <h2> Welcome to the Brain Dump!</h2>
+                <p>You have 3 minutes to empty out your brain, then it's time to relax for a minute.</p>
+                <p> Enter individual entries you want to dump, then hit 'Save' in between.</p>
+                <p>Do you want to start the timer?</p>
+                <button id="confirmButton">Yes</button>
+                <button id="cancelButton">Not yet</button>
+            </div>
+        </div>
+
+    <!-- Second Modal: Do you want to see your entries? -->
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <div id="p5-container"></div>
+            <div id="readyForEntries">
+                <p>Are you ready to see your entries?</p>
+                <!-- <div id="confirmationTimer">01:00</div> -->
+                <button id="confirmationConfirmButton" disabled="true">Yes</button>
+                <button id="confirmationCancelButton">Not yet</button>
+            </div>
+        </div>
+    </div>
+
 </body>
 
-
+<script src="sketch.js"></script>
 <script src="script.js"></script>
 
 </html>
