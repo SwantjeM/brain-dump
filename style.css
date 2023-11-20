@@ -67,10 +67,11 @@ main p {
 
 
 
-  #NotesWrapper {
+  #presentWrapper {
     border-radius: 20px;
     /* Set the border radius for rounded corners */
-    background: rgb(250, 255, 215);
+    background: rgb(255, 248, 199);
+    min-height: 50vh;
     margin: 0 auto;
     /* Center the box horizontally */
     margin-top: 50px;
