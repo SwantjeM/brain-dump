@@ -3,3 +3,8 @@ A web app to empty out your brain, take a few deep breaths, and then look at you
 This app uses non-persistent browser storage, so a page refresh will remove the brain-dump data. 
 
 This project uses mostly plain HTML/javaScript/CSS. The box breathing animation was built in p5.js
+
+If you want to clean out your brain, you can use it here: 
+swantjem.github.io/brain-dump/
+
+
